@@ -1,7 +1,7 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": ["config:base", "helpers:pinGitHubActionDigests", "group:allNonMajor", "schedule:weekends"],
-	"labels": [],
+	"labels": ["Meta: Dependencies"],
 	"reviewers": ["JaronZ"],
 	"npm": {
 		"rangeStrategy": "bump",
