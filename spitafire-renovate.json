@@ -1,0 +1,24 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["config:base", "helpers:pinGitHubActionDigests", "group:allNonMajor", "schedule:weekends"],
+	"labels": [],
+	"reviewers": ["JaronZ"],
+	"npm": {
+		"rangeStrategy": "bump",
+		"packageRules": [
+			{
+				"matchUpdateTypes": ["minor", "patch"],
+				"matchCurrentVersion": "!/^0/",
+				"automerge": true
+			},
+			{
+				"matchPackagePatterns": ["@discordjs", "^discord.js", "discord-api-types"],
+				"groupName": "Discord.JS Dependencies"
+			},
+			{
+				"matchDepTypes": ["engines"],
+				"enabled": false
+			}
+		]
+	}
+}
